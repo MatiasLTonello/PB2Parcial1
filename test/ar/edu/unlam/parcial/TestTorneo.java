@@ -7,7 +7,7 @@ import org.junit.Test;
 public class TestTorneo {
 
 	@Test
-	public void test() {
+	public void () {
 		fail("Not yet implemented");
 	}
 
