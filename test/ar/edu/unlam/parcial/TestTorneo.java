@@ -1,13 +1,13 @@
-package ar.edu.unlam;
+package ar.edu.unlam.parcial;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class EquipoTest {
+public class TestTorneo {
 
 	@Test
-	public void test() {
+	public void () {
 		fail("Not yet implemented");
 	}
 
