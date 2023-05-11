@@ -1,5 +1,5 @@
 package ar.edu.unlam.parcial;
 
-public class Persona {
+public class Jugador {
 
 }
