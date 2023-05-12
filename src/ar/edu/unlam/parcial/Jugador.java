@@ -4,9 +4,10 @@ public class Jugador extends Personal {
 	
 	public Integer numeroDorsal;
 	public Integer numeroTelefono;
+	public Integer amarillas;
 	
-	public Jugador(String nombre, String apellido, Integer numeroDorsal, Integer numeroTelefono){
-		super(nombre, apellido);
+	public Jugador(String nombre, String apellido, Integer numeroDorsal, Integer numeroTelefono, Integer edad, Integer dni){
+		super(nombre, apellido, edad, dni);
 		this.numeroDorsal = numeroDorsal;
 		this.numeroTelefono = numeroTelefono;
 		
@@ -51,6 +52,14 @@ public class Jugador extends Personal {
 		} else if (!numeroDorsal.equals(other.numeroDorsal))
 			return false;
 		return true;
+	}
+
+	public Integer getAmarillas() {
+		return amarillas;
+	}
+
+	public void setAmarillas(Integer amarillas) {
+		this.amarillas = amarillas;
 	}
 	
 	

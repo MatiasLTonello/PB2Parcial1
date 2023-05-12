@@ -2,20 +2,21 @@ package ar.edu.unlam.parcial;
 
 public class CuerpoTecnico extends Personal {
 
-	private String rol;
+	private Rol rol;
 	
-	public CuerpoTecnico(String nombre, String apellido, String rol) {
-		super(nombre, apellido);
+	public CuerpoTecnico(String nombre, String apellido, Rol rol, Integer edad, Integer dni) {
+		super(nombre, apellido, edad, dni);
 		this.rol = rol;
 
 	}
 
-	public String getRol() {
+	public Rol getRol() {
 		return rol;
 	}
 
-	public void setRol(String rol) {
+	public void setRol(Rol rol) {
 		this.rol = rol;
 	}
+
 
 }

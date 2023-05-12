@@ -4,10 +4,14 @@ public abstract class Personal {
 
 	private String nombre;
 	private String apellido;
+	private Integer edad;
+	private Integer dni;
 	
-	public Personal(String nombre, String apellido) {
+	public Personal(String nombre, String apellido, Integer edad, Integer dni) {
 		this.nombre = nombre;
 		this.apellido = apellido;
+		this.edad = edad;
+		this.dni = dni;
 	}
 
 	public String getNombre() {
@@ -24,5 +28,21 @@ public abstract class Personal {
 
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
+	}
+	
+	public Integer getEdad() {
+		return edad;
+	}
+
+	public void setEdad(Integer edad) {
+		this.edad = edad;
+	}
+
+	public Integer getDni() {
+		return dni;
+	}
+
+	public void setDni(Integer dni) {
+		this.dni = dni;
 	}
 }

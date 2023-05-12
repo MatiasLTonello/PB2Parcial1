@@ -8,7 +8,6 @@ public class Gol extends Evento {
 
     @Override
     public void ejecutar() {
-        System.out.println("¡Gol! " + getJugador().getNombre() + " del equipo " + getJugador().getEquipo() + 
-        		" anota en el minuto " + getTiempoMinutos());
+        System.out.println("¡Gol! " + getJugador().getNombre() + " anota en el minuto " + getTiempoMinutos());
     }
 }

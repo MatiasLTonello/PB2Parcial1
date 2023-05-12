@@ -38,7 +38,8 @@ public class Equipo {
     }
 
     public void agregarJugador(Jugador jugador) {
-        jugadores.add(jugador);
+        if(jugador.getEdad()>= 18) 
+        {jugadores.add(jugador);} 
     }
 
     public void agregarCuerpoTecnico(CuerpoTecnico cuerpoTecnico) {
