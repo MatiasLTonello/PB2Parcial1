@@ -52,3 +52,5 @@ public class Jugador extends Personal {
 			return false;
 		return true;
 	}
+
+}
