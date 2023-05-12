@@ -1,10 +1,8 @@
 package ar.edu.unlam.parcial;
 
-public class Evento {
-
-	public Object getJugador() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+public abstract class Evento {
+	private int tiempoMinutos;
+	private Jugador jugador;
+	
 
 }
