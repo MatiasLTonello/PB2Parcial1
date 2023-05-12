@@ -8,7 +8,6 @@ public class Roja extends Evento {
 
     @Override
     public void ejecutar() {
-    	System.out.println(+ getJugador().getNombre() + " del equipo " + getJugador().getEquipo() + 
-    			"Recibio una tarjeta Roja en el minuto " + getTiempoMinutos());
+    	System.out.println(getJugador().getNombre() + " Recibio una tarjeta Roja en el minuto " + getTiempoMinutos());
     }
 }

@@ -32,13 +32,24 @@ public class Equipo {
     public HashSet<Jugador> getJugadores() {
         return jugadores;
     }
+    
+    public Jugador buscarJugador(Integer numero) {
+        for (Jugador jugador : jugadores) {
+            if (jugador.getNumeroDorsal().equals(numero)) {
+                return jugador;
+            }
+        }
+        return null; 
+    }
+
 
     public HashSet<CuerpoTecnico> getCuerpoTecnico() {
         return cuerpoTecnico;
     }
 
     public void agregarJugador(Jugador jugador) {
-        jugadores.add(jugador);
+        if(jugador.getEdad()>= 18) 
+        {jugadores.add(jugador);} 
     }
 
     public void agregarCuerpoTecnico(CuerpoTecnico cuerpoTecnico) {
