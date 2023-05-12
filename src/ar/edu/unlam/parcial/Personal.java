@@ -45,4 +45,6 @@ public abstract class Personal {
 	public void setDni(Integer dni) {
 		this.dni = dni;
 	}
+
 }
+

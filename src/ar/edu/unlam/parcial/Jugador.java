@@ -62,6 +62,5 @@ public class Jugador extends Personal {
 		this.amarillas = amarillas;
 	}
 	
-	
-	
+
 }
