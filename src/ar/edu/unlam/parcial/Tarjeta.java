@@ -11,17 +11,11 @@ public class Tarjeta extends Evento {
 	@Override
 	public void ejecutar() {
 		if (tipotarjeta == TipoTarjeta.Amarilla) {
-			System.out.println(
-					getJugador().getNombre() + " Recibio una tarjeta Amarilla en el minuto " + getTiempoMinutos());
 			this.getJugador().setAmarillas(this.getJugador().getAmarillas() + 1);
+			tipoDeEvento = "Amarilla";
 
-			if (this.getJugador().getAmarillas() == 2) {
-			}
-		} else {
-			System.out
-					.println(getJugador().getNombre() + " Recibio una tarjeta Roja en el minuto " + getTiempoMinutos());
+		} else{
+			tipoDeEvento = "Roja";
 		}
 	}
 }
-
-//se podria hacer un enum tarjeta donde sea amarilla/roja y dependiendo ese enum hacer 2 metodos asi se puede lanzar la misma cosa

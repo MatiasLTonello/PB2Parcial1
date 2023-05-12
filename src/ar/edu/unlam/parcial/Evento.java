@@ -3,6 +3,7 @@ package ar.edu.unlam.parcial;
 public abstract class Evento {
 	private int tiempoMinutos;
 	private Jugador jugador;
+	protected String tipoDeEvento;
 
 	public Evento(int tiempoMinutos, Jugador jugador) {
 		this.tiempoMinutos = tiempoMinutos;
@@ -18,4 +19,8 @@ public abstract class Evento {
 	}
 
 	public abstract void ejecutar();
+
+	public String getTipoDeEvento() {
+		return tipoDeEvento;
+	}
 }

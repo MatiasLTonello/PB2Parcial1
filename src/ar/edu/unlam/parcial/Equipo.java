@@ -32,6 +32,16 @@ public class Equipo {
     public HashSet<Jugador> getJugadores() {
         return jugadores;
     }
+    
+    public Jugador buscarJugador(Integer numero) {
+        for (Jugador jugador : jugadores) {
+            if (jugador.getNumeroDorsal().equals(numero)) {
+                return jugador;
+            }
+        }
+        return null; 
+    }
+
 
     public HashSet<CuerpoTecnico> getCuerpoTecnico() {
         return cuerpoTecnico;
