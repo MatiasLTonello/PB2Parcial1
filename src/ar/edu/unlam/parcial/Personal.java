@@ -25,4 +25,6 @@ public abstract class Personal {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
+
 }
+

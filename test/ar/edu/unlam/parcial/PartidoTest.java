@@ -11,12 +11,15 @@ import org.junit.Test;
 public class PartidoTest {
 
 	@Test
-	public void queSePuedaCargarElEquipo() {
+	public void queSePuedaGenerarElPartido() {
 		
-		final Set<Persona> equipoEsperado;
-			
-		equipoEsperado = new HashSet <Persona>();
+		 HashSet<Personal> equipoLocalEsperado;
+		 HashSet<Personal> equipoVisitanteEsperado;
+		 final Integer NUMERO_DE_PARTIDO_ESPERADO = 1;
+		 List<Evento> golesEsperados;
+		 List<Evento> sancionesEsperadas;
 		
+		Partido partidoEsperado = new Partido (NUMERO_DE_PARTIDO_ESPERADO,equipoLocalEsperado,equipoVisitanteEsperado )	;	
 		
 	
 		
@@ -24,8 +27,7 @@ public class PartidoTest {
 	}
 	
 	
-	equipoEsperado.add()
-
+	
 }
 
 		
