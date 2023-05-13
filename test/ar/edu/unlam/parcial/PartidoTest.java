@@ -113,7 +113,15 @@ public class PartidoTest {
 	    
 	}
 	
+	@Test
+	public void queNoSePuedanSacarMasDeDosAmarillasAUnJugador() {
+		Partido partido = new Partido (1, bocaJuniors, river );	
 	
+		
+	    partido.sancionarAmarilla(partido.getEquipoLocal(), riquelme, 10);
+	    partido.sancionarAmarilla(partido.getEquipoLocal(), riquelme, 10);
+	    assertFalse(partido.sancionarAmarilla(partido.getEquipoLocal(), riquelme, 10));
+	}
 }
 
 		

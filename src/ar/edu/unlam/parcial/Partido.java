@@ -18,25 +18,30 @@ public class Partido {
 		eventos = new ArrayList<Evento>();
 	}
 
-	public void sancionarRoja(Equipo equipo, Jugador jugador, Integer minuto) {
+	public Boolean sancionarRoja(Equipo equipo, Jugador jugador, Integer minuto) {
 	    if (equipo == null || jugador == null) {
-	        throw new IllegalArgumentException("Equipo y jugador no pueden ser nulos.");
+	        return false;
 	    }
 
 	    if (!equipo.getJugadores().contains(jugador)) {
-	        throw new IllegalArgumentException("El jugador no pertenece al equipo.");
+	        return false;
 	    }
 
 	    Evento roja = new Tarjeta(minuto, equipo.buscarJugadorPorNumero(jugador.getNumeroDorsal()), TipoTarjeta.Roja);
 	    this.eventos.add(roja);
+	    return true;
 	}
 
-	public void sancionarAmarilla(Equipo equipo, Jugador jugador, Integer minuto) {
-	    Evento amarilla = new Tarjeta(minuto, jugador, TipoTarjeta.Amarilla);
-	    this.eventos.add(amarilla);
-	    if (jugador.getAmarillas() == 2) {
+	public Boolean sancionarAmarilla(Equipo equipo, Jugador jugador, Integer minuto) {
+		if(jugador.getAmarillas() < 2) {
+			Evento amarilla = new Tarjeta(minuto, jugador, TipoTarjeta.Amarilla);
+			this.eventos.add(amarilla);
+			if (jugador.getAmarillas() == 2) {
 	        sancionarRoja(equipo, jugador, minuto);
-	    }
+	        return true;
+			}
+		}
+		return false;
 	}
 
 
