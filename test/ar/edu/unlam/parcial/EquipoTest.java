@@ -40,8 +40,19 @@ public class EquipoTest {
 	}
 	
 	@Test
+	public void queNoSePuedanAgregarDosJugadoresConElMismoDorsal() {
+		Integer JUGADORES_ESPERADOS = 1;
+		Jugador riquelme = new Jugador("Roman", "Riquelme", 10, 1123214221, 24, "40143300");
+		Jugador ortega = new Jugador("Burrito", "Ortega", 10, 12312312, 30, "312013");
+		bocaJuniors.agregarJugador(riquelme);
+		bocaJuniors.agregarJugador(ortega);
+		
+		assertEquals(bocaJuniors.getCantidadDeJugadores(), JUGADORES_ESPERADOS);
+	}
+	
+	@Test
 	public void queSePuedaAgregarCuerpoTecnicoCorrectamente() {
-		Integer CUERPO_TECNICO_ESPERADO = 2;
+		Integer CUERPO_TECNICO_ESPERADO = 1;
 		
 		CuerpoTecnico gallardo = new CuerpoTecnico("Marcelo", "Gallardo", Rol.DT, 22, "30123123");
 		bocaJuniors.agregarCuerpoTecnico(gallardo);
@@ -57,6 +68,15 @@ public class EquipoTest {
 		
 		assertEquals(bocaJuniors.buscarJugadorPorDni("40143300").getNombre(), NOMBRE_DEL_JUGADOR_ESPERADO );
 		
+	}
+	
+	@Test
+	public void queSePuedaBuscarUnJugadorPorDorsal() {
+		String NOMBRE_DEL_JUGADOR_ESPERADO = "Roman";
+		Jugador riquelme = new Jugador("Roman", "Riquelme", 10, 1123214221, 24, "40143300");
+		bocaJuniors.agregarJugador(riquelme);
+		
+		assertEquals(bocaJuniors.buscarJugadorPorNumero(10).getNombre(), NOMBRE_DEL_JUGADOR_ESPERADO );
 	}
 
 }

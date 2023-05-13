@@ -1,5 +1,7 @@
 package ar.edu.unlam.parcial;
 
+import java.util.List;
+
 public abstract class Evento {
 	private int tiempoMinutos;
 	private Jugador jugador;
@@ -23,4 +25,5 @@ public abstract class Evento {
 	public String getTipoDeEvento() {
 		return tipoDeEvento;
 	}
+	
 }

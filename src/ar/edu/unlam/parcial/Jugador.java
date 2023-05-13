@@ -5,12 +5,14 @@ public class Jugador extends Personal {
 	public Integer numeroDorsal;
 	public Integer numeroTelefono;
 	public Integer amarillas;
+	private Boolean expulsado;
 	
 	public Jugador(String nombre, String apellido, Integer numeroDorsal, Integer numeroTelefono, Integer edad, String dni){
 		super(nombre, apellido, edad, dni);
 		this.numeroDorsal = numeroDorsal;
 		this.numeroTelefono = numeroTelefono;
-		
+		this.amarillas = 0;
+		this.expulsado = false;
 	}
 
 	public Integer getNumeroDorsal() {
@@ -27,6 +29,21 @@ public class Jugador extends Personal {
 
 	public void setNumeroTelefono(Integer numeroTelefono) {
 		this.numeroTelefono = numeroTelefono;
+	}
+	
+	public void agregarAmarilla() {
+	    this.amarillas++;
+	    if (this.amarillas == 2) {
+	        this.expulsado = true;
+	    }
+	}
+
+	public void agregarRoja() {
+	    this.expulsado = true;
+	}
+	
+	public void setExpulsado(Boolean isExpulsado) {
+		this.expulsado = isExpulsado;
 	}
 
 	@Override
