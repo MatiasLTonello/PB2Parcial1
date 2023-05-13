@@ -32,12 +32,13 @@ public class Partido {
 	}
 
 	public void sancionarAmarilla(Equipo equipo, Jugador jugador, Integer minuto) {
-		Evento amarilla = new Tarjeta(minuto, equipo.buscarJugadorPorNumero(jugador.getNumeroDorsal()), TipoTarjeta.Amarilla);
-		this.eventos.add(amarilla);
-		if (equipo.buscarJugadorPorNumero(jugador.getNumeroDorsal()).getAmarillas() == 2) {
-			sancionarRoja(equipo, jugador, minuto);
-		}
+	    Evento amarilla = new Tarjeta(minuto, jugador, TipoTarjeta.Amarilla);
+	    this.eventos.add(amarilla);
+	    if (jugador.getAmarillas() == 2) {
+	        sancionarRoja(equipo, jugador, minuto);
+	    }
 	}
+
 
 	public void anotarUnGol(Equipo equipo, Jugador jugador, Integer minuto) {
 		Evento gol = new Gol(minuto, equipo.buscarJugadorPorNumero(jugador.getNumeroDorsal()));

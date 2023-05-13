@@ -31,11 +31,9 @@ public class Jugador extends Personal {
 		this.numeroTelefono = numeroTelefono;
 	}
 	
-	public void agregarAmarilla() {
-	    this.amarillas++;
-	    if (this.amarillas == 2) {
-	        this.expulsado = true;
-	    }
+	
+	public Boolean estaExpulsado() {
+		return this.expulsado;
 	}
 
 	public void agregarRoja() {

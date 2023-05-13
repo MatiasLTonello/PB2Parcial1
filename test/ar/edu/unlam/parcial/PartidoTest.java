@@ -100,6 +100,19 @@ public class PartidoTest {
 	    assertEquals(TipoTarjeta.Roja, tarjeta.getTipoTarjeta());
 	}
 	
+	@Test
+	public void queSiSeSacanDosAmarillasElJugadorEsteExpulsado() {    
+	  
+		Partido partido = new Partido (1, bocaJuniors, river );	
+	
+		
+	    partido.sancionarAmarilla(partido.getEquipoLocal(), riquelme, 10);
+	    partido.sancionarAmarilla(partido.getEquipoLocal(), riquelme, 10);
+
+	    assertTrue(riquelme.estaExpulsado());
+	    
+	}
+	
 	
 }
 
