@@ -59,13 +59,19 @@ public class Equipo {
         return cuerpoTecnico;
     }
 
-    public void agregarJugador(Jugador jugador) {
-        if(jugador.getEdad()>= 18) 
-        {jugadores.add(jugador);} 
+    public Boolean agregarJugador(Jugador jugador) {
+       if(jugador.getEdad() > 18) {
+    	   this.jugadores.add(jugador);
+    	   return true;
+       }
+       return false;
     }
 
-    public void agregarCuerpoTecnico(CuerpoTecnico cuerpoTecnico) {
-        this.cuerpoTecnico.add(cuerpoTecnico);
+    public Boolean agregarCuerpoTecnico(CuerpoTecnico cuerpoTecnico) {
+       if(this.cuerpoTecnico.add(cuerpoTecnico)) {
+    	   return true;
+       }
+       return false;
     }
 
 	public Integer getCantidadDeJugadores() {

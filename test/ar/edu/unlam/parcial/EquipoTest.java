@@ -36,6 +36,7 @@ public class EquipoTest {
 		bocaJuniors.agregarJugador(riquelme);
 		bocaJuniors.agregarJugador(ortega);
 		
+		assertTrue(bocaJuniors.agregarJugador(riquelme));
 		assertEquals(bocaJuniors.getCantidadDeJugadores(), JUGADORES_ESPERADOS);
 	}
 	
@@ -55,8 +56,9 @@ public class EquipoTest {
 		Integer CUERPO_TECNICO_ESPERADO = 1;
 		
 		CuerpoTecnico gallardo = new CuerpoTecnico("Marcelo", "Gallardo", Rol.DT, 22, "30123123");
-		bocaJuniors.agregarCuerpoTecnico(gallardo);
+	
 		
+		assertTrue(bocaJuniors.agregarCuerpoTecnico(gallardo));
 		assertEquals(bocaJuniors.getCantidadDeCuerpoTecnico(), CUERPO_TECNICO_ESPERADO);
 	}
 	
