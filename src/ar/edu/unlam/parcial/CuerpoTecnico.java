@@ -4,7 +4,7 @@ public class CuerpoTecnico extends Personal {
 
 	private Rol rol;
 	
-	public CuerpoTecnico(String nombre, String apellido, Rol rol, Integer edad, Integer dni) {
+	public CuerpoTecnico(String nombre, String apellido, Rol rol, Integer edad, String dni) {
 		super(nombre, apellido, edad, dni);
 		this.rol = rol;
 

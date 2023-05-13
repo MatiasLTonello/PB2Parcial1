@@ -5,9 +5,9 @@ public abstract class Personal {
 	private String nombre;
 	private String apellido;
 	private Integer edad;
-	private Integer dni;
+	private String dni;
 	
-	public Personal(String nombre, String apellido, Integer edad, Integer dni) {
+	public Personal(String nombre, String apellido, Integer edad, String dni) {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.edad = edad;
@@ -38,11 +38,11 @@ public abstract class Personal {
 		this.edad = edad;
 	}
 
-	public Integer getDni() {
+	public String getDni() {
 		return dni;
 	}
 
-	public void setDni(Integer dni) {
+	public void setDni(String dni) {
 		this.dni = dni;
 	}
 

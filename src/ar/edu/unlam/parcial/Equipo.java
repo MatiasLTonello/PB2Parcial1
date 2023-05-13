@@ -17,7 +17,10 @@ public class Equipo {
         this.cuerpoTecnico = new HashSet<>();
     }
 
-    public String getNombre() {
+    public Equipo() {
+	}
+
+	public String getNombre() {
         return nombre;
     }
 
@@ -33,13 +36,22 @@ public class Equipo {
         return jugadores;
     }
     
-    public Jugador buscarJugador(Integer numero) {
+    public Jugador buscarJugadorPorNumero(Integer numero) {
         for (Jugador jugador : jugadores) {
             if (jugador.getNumeroDorsal().equals(numero)) {
                 return jugador;
             }
         }
         return null; 
+    }
+    
+    public Jugador buscarJugadorPorDni(String dni) {
+        for (Jugador jugador : jugadores) {
+            if (jugador.getDni().equals(dni)) {
+                return jugador;
+            }
+        }
+        return null;
     }
 
 
@@ -55,4 +67,12 @@ public class Equipo {
     public void agregarCuerpoTecnico(CuerpoTecnico cuerpoTecnico) {
         this.cuerpoTecnico.add(cuerpoTecnico);
     }
+
+	public Integer getCantidadDeJugadores() {
+		return this.jugadores.size();
+	}
+
+	public Integer getCantidadDeCuerpoTecnico() {
+		return this.cuerpoTecnico.size();
+	}
 }
