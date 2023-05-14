@@ -6,15 +6,21 @@ public class Tarjeta extends Evento {
 	public Tarjeta(int tiempoMinutos, Jugador jugador, TipoTarjeta tipotarjeta) {
 		super(tiempoMinutos, jugador);
 		this.tipotarjeta = tipotarjeta;
+		this.ejecutar();
+	}
+
+	public TipoTarjeta getTipoTarjeta() {
+		return tipotarjeta;
 	}
 
 	@Override
 	public void ejecutar() {
-		if (tipotarjeta == TipoTarjeta.Amarilla) {
-			this.getJugador().setAmarillas(this.getJugador().getAmarillas() + 1);
+		Jugador jugador = this.getJugador();
+		if (this.tipotarjeta == TipoTarjeta.Amarilla) {
+			jugador.setAmarillas(jugador.getAmarillas() + 1);
 			tipoDeEvento = "Amarilla";
-
-		} else{
+		} else if (this.tipotarjeta == TipoTarjeta.Roja) {
+			jugador.setExpulsado(true);
 			tipoDeEvento = "Roja";
 		}
 	}

@@ -2,11 +2,24 @@ package ar.edu.unlam.parcial;
 
 public class Gol extends Evento {
 
-    public Gol(int tiempoMinutos, Jugador jugador) {
-        super(tiempoMinutos, jugador);
-        tipoDeEvento = "gol";
-    }
+	String nombreDelEquipo;
 
-    @Override
-    public void ejecutar() {}
+	public Gol(int tiempoMinutos, Jugador jugador, String nombreDelEquipo) {
+		super(tiempoMinutos, jugador);
+		tipoDeEvento = "gol";
+		this.nombreDelEquipo = nombreDelEquipo;
+
+	}
+
+	public String getNombreDelEquipo() {
+		return nombreDelEquipo;
+	}
+
+	public void setNombreDelEquipo(String nombreDelEquipo) {
+		this.nombreDelEquipo = nombreDelEquipo;
+	}
+
+	@Override
+	public void ejecutar() {
+	}
 }

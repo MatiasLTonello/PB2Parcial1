@@ -8,6 +8,7 @@ public abstract class Evento {
 	public Evento(int tiempoMinutos, Jugador jugador) {
 		this.tiempoMinutos = tiempoMinutos;
 		this.jugador = jugador;
+
 	}
 
 	public int getTiempoMinutos() {
@@ -23,4 +24,5 @@ public abstract class Evento {
 	public String getTipoDeEvento() {
 		return tipoDeEvento;
 	}
+
 }
