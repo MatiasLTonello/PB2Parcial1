@@ -7,16 +7,16 @@ import java.util.List;
 public class Torneo {
 	private List<Equipo> equiposInicial;
 	private List<Partido> partidos;
-	private List<Equipo> equiposFinal;
+	private List<Equipo> equiposAyuda;
 
 	public Torneo(List<Equipo> equiposInicial) {
 		this.equiposInicial = equiposInicial;
 		this.partidos = new ArrayList<>();
-		this.equiposFinal = new ArrayList<>(equiposFinal);
+		this.equiposAyuda = new ArrayList<>(equiposAyuda);
 	}
 
 	public void generarTorneo() {
-		while (equiposFinal.size() >= 2) {
+		while (equiposAyuda.size() >= 2) {
 			List<Equipo> equiposAleatorios = seleccionarEquiposAleatorios();
 
 			if (equiposAleatorios.size() == 2) {
@@ -29,7 +29,7 @@ public class Torneo {
 	}
 
 	private List<Equipo> seleccionarEquiposAleatorios() {
-		List<Equipo> equiposAleatorios = new ArrayList<>(equiposFinal);
+		List<Equipo> equiposAleatorios = new ArrayList<>(equiposAyuda);
 		Collections.shuffle(equiposAleatorios);
 		return equiposAleatorios.subList(0, Math.min(2, equiposAleatorios.size()));
 	}
@@ -40,6 +40,6 @@ public class Torneo {
 	}
 
 	private void moverEquipos(List<Equipo> equipos) {
-		equiposFinal.removeAll(equipos);
+		equiposAyuda.removeAll(equipos);
 	}
 }
