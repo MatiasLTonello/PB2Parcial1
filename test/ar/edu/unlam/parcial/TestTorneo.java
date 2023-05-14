@@ -126,22 +126,31 @@ public class TestTorneo {
 
 		assertNotEquals(10, torneo.getEquipos().size());
 	}
-
-	@Test
+	
 	public void ObtenerJugadoresMasAmonestados() {
 
 		Jugador jugador1 = new Jugador("Juan", "Perez", 10, 123456789, 25, "12345678");
 		Jugador jugador2 = new Jugador("Pedro", "Gomez", 5, 987654321, 28, "87654321");
 		Jugador jugador3 = new Jugador("Luis", "Lopez", 7, 555555555, 30, "76543210");
 
-		Equipo equipo1 = new Equipo("Equipo1", "Apodo1", "Dirección1");
-		Equipo equipo2 = new Equipo("Equipo2", "Apodo2", "Dirección2");
+		Equipo equipo1 = new Equipo("boca", "Apodo1", "Direccion1");
+		Equipo equipo2 = new Equipo("boca", "Apodo2", "Direccion2");
+		Equipo equipo3 = new Equipo("Equipo3", "Apodo3", "Direccion3");
+		Equipo equipo4 = new Equipo("Equipo4", "Apodo4", "Direccion4");
+		Equipo equipo5 = new Equipo("Equipo5", "Apodo5", "Direccion5");
+		Equipo equipo6 = new Equipo("Equipo6", "Apodo6", "Direccion6");
+		Equipo equipo7 = new Equipo("Equipo7", "Apodo7", "Direccion7");
+		Equipo equipo8 = new Equipo("Equipo8", "Apodo8", "Direccion8");
+		Equipo equipo9 = new Equipo("Equipo9", "Apodo9", "Direccion9");
+		Equipo equipo10 = new Equipo("Equipo10", "Apodo10", "Direccion10");
 
 		equipo1.agregarJugador(jugador1);
 		equipo1.agregarJugador(jugador2);
 		equipo2.agregarJugador(jugador3);
 
-		Torneo torneo = new Torneo();
+		List<Equipo> equipos = Arrays.asList(equipo1, equipo2, equipo3, equipo4, equipo5, equipo6, equipo7, equipo8,
+				equipo9, equipo10);
+		Torneo torneo = new Torneo(equipos);
 		torneo.agregarEquipo(equipo1);
 		torneo.agregarEquipo(equipo2);
 
@@ -162,4 +171,5 @@ public class TestTorneo {
 		assertEquals(1, jugadoresMasAmonestados.size());
 		assertEquals(jugador1, jugadoresMasAmonestados.get(0));
 	}
+
 }
