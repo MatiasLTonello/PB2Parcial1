@@ -3,7 +3,7 @@ package ar.edu.unlam.parcial;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
-
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -13,20 +13,28 @@ import org.junit.Test;
 
 public class PartidoTest {
 
+
 	private Equipo bocaJuniors;
 	private Equipo river;
 	private Jugador riquelme;
 	private Jugador ortega;
+
+	
 	 @Before
 	    public void setUp() {
-	        bocaJuniors = new Equipo("Boca Juniors", "Xeneizes", "La Boca");
-	        river = new Equipo("River", "Gallinas", "Nuniez");
+		 
+	         Equipo bocaJuniors = new Equipo("Boca Juniors", "Xeneizes", "La Boca");
+	        Equipo river = new Equipo("River", "Gallinas", "Nuniez");
 	        riquelme = new Jugador("Roman", "Riquelme", 10, 1123214221, 24, "40143300");
 			ortega = new Jugador("Burrito", "Ortega", 8, 12312312, 30, "312013");
 			bocaJuniors.agregarJugador(riquelme);
 			river.agregarJugador(ortega);
+			
 
-	    }
+	    } 
+	
+
+	
 	@Test
 	public void queSePuedaGenerarElPartido() {
 		
@@ -67,6 +75,25 @@ public class PartidoTest {
 	    partidoEsperado.anotarUnGol(bocaJuniors, riquelme, 25);
 
 	    assertEquals(GOLES_ESPERADOS, partidoEsperado.buscarGoles().size());
+
+	}
+	
+	@Test
+	public void queSeSepaQuienEsElEquipoGanador() {
+		Partido partidoEsperado = new Partido (1, bocaJuniors, river );		
+	    final String EQUIPO_GANADOR_ESPERADO = "bocaJunior";
+	   
+	    
+	    partidoEsperado.anotarUnGol(bocaJuniors, riquelme, 90);
+	    partidoEsperado.anotarUnGol(bocaJuniors, riquelme, 32);
+	    partidoEsperado.anotarUnGol(bocaJuniors, riquelme, 25);
+	    
+	   
+	    
+	    String equipoObtenido = partidoEsperado.obtenerEquipoGanador();
+	    
+
+	    assertEquals(EQUIPO_GANADOR_ESPERADO,equipoObtenido);
 
 	}
 	
@@ -122,6 +149,8 @@ public class PartidoTest {
 	    partido.sancionarAmarilla(partido.getEquipoLocal(), riquelme, 10);
 	    assertFalse(partido.sancionarAmarilla(partido.getEquipoLocal(), riquelme, 10));
 	}
+	
+	
 }
 
 		

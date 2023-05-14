@@ -49,7 +49,7 @@ public class Torneo {
 	}
 
 	private List<Equipo> seleccionarEquiposAleatorios() {
-		List<Equipo> equiposAleatorios = new ArrayList<>(equiposFinal);
+		List<Equipo> equiposAleatorios = new ArrayList<Equipo>(equiposFinal);
 		Collections.shuffle(equiposAleatorios);
 		return equiposAleatorios.subList(0, Math.min(2, equiposAleatorios.size()));
 	}

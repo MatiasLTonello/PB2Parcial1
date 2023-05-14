@@ -12,7 +12,8 @@ public class Partido {
 	private Equipo equipoVisitante;
 	private Integer numeroDePartdo;
 	private ArrayList<Evento> eventos;
-	
+	private ArrayList<Gol> goleador;
+
 
 	public Partido(Integer numeroDePartido, Equipo equipoLocal, Equipo equipoVisitante) {
 		this.equipoLocal = equipoLocal;
@@ -49,7 +50,7 @@ public class Partido {
 
 
 	public void anotarUnGol(Equipo equipo, Jugador jugador, Integer minuto) {
-		Evento gol = new Gol(minuto, equipo.buscarJugadorPorNumero(jugador.getNumeroDorsal()));
+		Evento gol = new Gol(minuto, equipo.buscarJugadorPorNumero(jugador.getNumeroDorsal()),equipo.getNombre());
 		this.eventos.add(gol);
 	}
 	
@@ -77,9 +78,40 @@ public class Partido {
 	    
 	    return amonestados;
 	}
+	
+	public String obtenerEquipoGanador() {
+		Integer golesEquipoLocal=0;
+		Integer golesEquipoVisitante=0;
+		String ganador="empate";
+		for(Gol gol : this.buscarGoles()) {
+			
+			
+			if (equipoLocal.getNombre() == gol.getNombreDelEquipo()) {
+				golesEquipoLocal++;
+			} else {
+			if (equipoVisitante.getNombre() == gol.getNombreDelEquipo()) { 
+				golesEquipoVisitante++;
+		}
+			}
+		
+			
+		if (golesEquipoLocal>golesEquipoVisitante) {
+			ganador= "local";
+		}
+		else {
+			if (golesEquipoLocal<golesEquipoVisitante)
+				ganador ="visitante";
+		}
+			
+		}
+		return ganador;		
+		
+	}
+	
 
 	
-    public void listarEventos() {
+
+	public void listarEventos() {
         System.out.println("Lista de eventos del partido:");
 
         for (Evento evento : eventos) {

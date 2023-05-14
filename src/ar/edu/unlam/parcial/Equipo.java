@@ -54,9 +54,22 @@ public class Equipo {
         }
         return null;
     }
+    
+    public Jugador buscarNombreDeEquipo(String nombre) {
+        for (Jugador jugador : jugadores) {
+            if (jugador.getNombre().equals(nombre)) {
+                return jugador;
+            }
+        }
+        return null; 
+    }
 
 
-    public HashSet<CuerpoTecnico> getCuerpoTecnico() {
+    public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public HashSet<CuerpoTecnico> getCuerpoTecnico() {
         return cuerpoTecnico;
     }
 

@@ -76,6 +76,11 @@ public class Jugador extends Personal {
 	public void setAmarillas(Integer amarillas) {
 		this.amarillas = amarillas;
 	}
+
+	public String getJugadores() {
+		
+		return Jugador.super.getDni();
+		}
 	
 
 }
