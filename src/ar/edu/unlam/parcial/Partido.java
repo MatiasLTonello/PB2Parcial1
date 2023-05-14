@@ -1,8 +1,10 @@
 package ar.edu.unlam.parcial;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
 public class Partido {
 
@@ -11,6 +13,7 @@ public class Partido {
 	private Integer numeroDePartdo;
 	private ArrayList<Evento> eventos;
 	private ArrayList<Gol> goleador;
+
 
 	public Partido(Integer numeroDePartido, Equipo equipoLocal, Equipo equipoVisitante) {
 		this.equipoLocal = equipoLocal;
@@ -122,7 +125,6 @@ public class Partido {
     }
     
     
-
 	public Equipo getEquipoLocal() {
 		return this.equipoLocal;
 	}

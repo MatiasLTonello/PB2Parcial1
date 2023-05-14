@@ -2,7 +2,7 @@
 <application:Application xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:advanced="http://www.eclipse.org/ui/2010/UIModel/application/ui/advanced" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/ui/basic" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_50LtwPEPEe2lhqT11kHJQQ" elementId="org.eclipse.e4.legacy.ide.application" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_50LtwfEPEe2lhqT11kHJQQ" bindingContexts="_50LtyvEPEe2lhqT11kHJQQ">
   <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;workbench>&#xA;&lt;mruList/>&#xA;&lt;/workbench>"/>
   <tags>activeSchemeId:org.eclipse.ui.defaultAcceleratorConfiguration</tags>
-  <children xsi:type="basic:TrimmedWindow" xmi:id="_50LtwfEPEe2lhqT11kHJQQ" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_6D1TUvEPEe2lhqT11kHJQQ" label="%trimmedwindow.label.eclipseSDK" x="42" y="80" width="1024" height="768">
+  <children xsi:type="basic:TrimmedWindow" xmi:id="_50LtwfEPEe2lhqT11kHJQQ" elementId="IDEWindow" contributorURI="platform:/plugin/org.eclipse.platform" selectedElement="_6D1TUvEPEe2lhqT11kHJQQ" label="%trimmedwindow.label.eclipseSDK" x="243" y="132" width="1024" height="768">
     <persistedState key="coolBarVisible" value="true"/>
     <persistedState key="perspectiveBarVisible" value="true"/>
     <persistedState key="isRestored" value="true"/>
@@ -339,7 +339,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_6FJh8PEPEe2lhqT11kHJQQ" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_uOZBcPEyEe2XfbbXv5N94g" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_50sraPEPEe2lhqT11kHJQQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_ZUqsIPKIEe2_1fu0aKuyow" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_50sraPEPEe2lhqT11kHJQQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_6FJh8fEPEe2lhqT11kHJQQ" elementId="group.edit" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -367,7 +367,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_6FKJBPEPEe2lhqT11kHJQQ" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_uOcr0PEyEe2XfbbXv5N94g" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_50sEGvEPEe2lhqT11kHJQQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_ZUtIYfKIEe2_1fu0aKuyow" elementId="org.eclipse.ui.window.pinEditor" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" enabled="false" type="Check" command="_50sEGvEPEe2lhqT11kHJQQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_6FKJBfEPEe2lhqT11kHJQQ" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -947,7 +947,7 @@
     <bindings xmi:id="_51LzVvEPEe2lhqT11kHJQQ" keySequence="ALT+CR" command="_50oZuPEPEe2lhqT11kHJQQ"/>
   </bindingTables>
   <bindingTables xmi:id="_53ti5vEPEe2lhqT11kHJQQ" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_50LtzfEPEe2lhqT11kHJQQ">
-    <bindings xmi:id="_t_V40fEyEe2XfbbXv5N94g" keySequence="M1+W" command="_53ti5PEPEe2lhqT11kHJQQ"/>
+    <bindings xmi:id="_ZFiD8fKIEe2_1fu0aKuyow" keySequence="M1+W" command="_53ti5PEPEe2lhqT11kHJQQ"/>
   </bindingTables>
   <bindingTables xmi:id="_6MgHIfEPEe2lhqT11kHJQQ" bindingContext="_6MgHIPEPEe2lhqT11kHJQQ"/>
   <bindingTables xmi:id="_6MguMfEPEe2lhqT11kHJQQ" bindingContext="_6MguMPEPEe2lhqT11kHJQQ"/>

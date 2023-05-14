@@ -20,6 +20,7 @@ public class Equipo {
     public Equipo() {
 	}
 
+
 	public String getNombre() {
         return nombre;
     }
@@ -73,7 +74,7 @@ public class Equipo {
     }
 
     public Boolean agregarJugador(Jugador jugador) {
-       if(jugador.getEdad() > 18) {
+       if(this.jugadores.size() < 6 && jugador.getEdad() > 18) {
     	   this.jugadores.add(jugador);
     	   return true;
        }
@@ -81,7 +82,8 @@ public class Equipo {
     }
 
     public Boolean agregarCuerpoTecnico(CuerpoTecnico cuerpoTecnico) {
-       if(this.cuerpoTecnico.add(cuerpoTecnico)) {
+       if(this.cuerpoTecnico.size() < 2) {
+    	   this.cuerpoTecnico.add(cuerpoTecnico);
     	   return true;
        }
        return false;
@@ -93,5 +95,16 @@ public class Equipo {
 
 	public Integer getCantidadDeCuerpoTecnico() {
 		return this.cuerpoTecnico.size();
+	}
+
+	public Double calcularEdadPromedio() {
+	    Double edadPromedio = 0.0;
+	    for (Jugador jugador : jugadores) {
+	        edadPromedio += jugador.getEdad();
+	    }
+	    if (this.getCantidadDeJugadores() > 0) {
+	        edadPromedio /= this.getCantidadDeJugadores();
+	    }
+	    return edadPromedio;
 	}
 }
