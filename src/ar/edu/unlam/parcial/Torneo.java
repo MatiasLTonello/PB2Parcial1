@@ -90,8 +90,9 @@ public class Torneo {
 		this.equipos = equipos;
 	}
 
-	public void agregarPartido(Partido partido) {
-	    this.partidos.add(partido);
+	private Partido crearPartido(Equipo equipo1, Equipo equipo2) {
+		Partido partido = new Partido(partidos.size() + 1, equipo1, equipo2);
+		return partido;
 	}
 
 	private void moverEquipos(List<Equipo> equipos) {
