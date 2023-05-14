@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Torneo {
 	private List<Equipo> equipos;
@@ -27,7 +28,6 @@ public class Torneo {
 		this.equiposFinal = new ArrayList<>(equipos);
 	}
 
-
 	public Boolean generarTorneo() {
 		if (equipos.size() == 10) {
 			for (int i = 0; i < equiposFinal.size() - 1; i++) {
@@ -41,11 +41,48 @@ public class Torneo {
 		return false;
 	}
 
+	public List<Jugador> obtenerJugadoresMasAmonestados() {
+		Map<Jugador, Integer> amonestacionesPorJugador = new HashMap<>();
+
+		for (Partido partido : partidos) {
+			List<Jugador> amonestadosPartido = partido.buscarAmonestados();
+			for (Jugador jugador : amonestadosPartido) {
+				Integer amonestacionesActuales = amonestacionesPorJugador.getOrDefault(jugador, 0);
+				amonestacionesPorJugador.put(jugador, amonestacionesActuales + 1);
+			}
+		}
+
+		int maxAmonestaciones = 0;
+		for (Integer amonestaciones : amonestacionesPorJugador.values()) {
+			if (amonestaciones > maxAmonestaciones) {
+				maxAmonestaciones = amonestaciones;
+			}
+		}
+
+		List<Jugador> jugadoresMasAmonestados = new ArrayList<>();
+		for (Map.Entry<Jugador, Integer> entry : amonestacionesPorJugador.entrySet()) {
+			if (entry.getValue() == maxAmonestaciones) {
+				jugadoresMasAmonestados.add(entry.getKey());
+			}
+		}
+
+		return jugadoresMasAmonestados;
+	}
+
 	public Boolean agregarEquipo(Equipo equipo) {
-		if (equipos.size() < 10) {
+		if (equipos.size() < 10 && !tieneEquipoMismoNombre(equipo)) {
 			equipos.add(equipo);
 			equiposFinal.add(equipo);
 			return true;
+		}
+		return false;
+	}
+
+	private boolean tieneEquipoMismoNombre(Equipo equipo) {
+		for (Equipo e : equipos) {
+			if (e.getNombre().equalsIgnoreCase(equipo.getNombre())) {
+				return true;
+			}
 		}
 		return false;
 	}
