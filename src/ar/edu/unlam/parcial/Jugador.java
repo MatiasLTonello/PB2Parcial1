@@ -1,13 +1,14 @@
 package ar.edu.unlam.parcial;
 
 public class Jugador extends Personal {
-	
+
 	public Integer numeroDorsal;
 	public Integer numeroTelefono;
 	public Integer amarillas;
 	private Boolean expulsado;
-	
-	public Jugador(String nombre, String apellido, Integer numeroDorsal, Integer numeroTelefono, Integer edad, String dni){
+
+	public Jugador(String nombre, String apellido, Integer numeroDorsal, Integer numeroTelefono, Integer edad,
+			String dni) {
 		super(nombre, apellido, edad, dni);
 		this.numeroDorsal = numeroDorsal;
 		this.numeroTelefono = numeroTelefono;
@@ -30,16 +31,15 @@ public class Jugador extends Personal {
 	public void setNumeroTelefono(Integer numeroTelefono) {
 		this.numeroTelefono = numeroTelefono;
 	}
-	
-	
+
 	public Boolean estaExpulsado() {
 		return this.expulsado;
 	}
 
 	public void agregarRoja() {
-	    this.expulsado = true;
+		this.expulsado = true;
 	}
-	
+
 	public void setExpulsado(Boolean isExpulsado) {
 		this.expulsado = isExpulsado;
 	}
@@ -78,9 +78,8 @@ public class Jugador extends Personal {
 	}
 
 	public String getJugadores() {
-		
+
 		return Jugador.super.getDni();
-		}
-	
+	}
 
 }

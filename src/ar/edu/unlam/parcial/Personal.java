@@ -6,7 +6,7 @@ public abstract class Personal {
 	private String apellido;
 	private Integer edad;
 	private String dni;
-	
+
 	public Personal(String nombre, String apellido, Integer edad, String dni) {
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -29,7 +29,7 @@ public abstract class Personal {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-	
+
 	public Integer getEdad() {
 		return edad;
 	}
@@ -47,4 +47,3 @@ public abstract class Personal {
 	}
 
 }
-
