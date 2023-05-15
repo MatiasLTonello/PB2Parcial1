@@ -63,7 +63,7 @@ public class TestTorneo {
 	}
 
 	@Test
-	public void testObtenerGoleador() {
+	public void queSePuedaObtenerAlGoleadorDelTorneo() {
 
 		Equipo equipo1 = new Equipo("Equipo1", "Apodo1", "Direccion1");
 		Equipo equipo2 = new Equipo("Equipo2", "Apodo2", "Direccion2");

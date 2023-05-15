@@ -1,7 +1,7 @@
 package ar.edu.unlam.parcial;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
+
 import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
@@ -86,6 +86,23 @@ public class TestPartido {
 		assertEquals(bocaJuniors, partidoEsperado.obtenerEquipoGanador());
 
 	}
+	
+	@Test
+	public void queSePuedaSaberSiHuboUnEmpate() {
+
+		bocaJuniors.agregarJugador(riquelme);
+		river.agregarJugador(ortega);
+
+		Partido partidoEsperado = new Partido(1, bocaJuniors, river);
+
+		partidoEsperado.anotarUnGol(bocaJuniors, riquelme, 90);
+		partidoEsperado.anotarUnGol(river, ortega, 32);
+	
+		assertNull( partidoEsperado.obtenerEquipoGanador());
+
+	}
+
+
 
 	@Test
 	public void queSePuedanBuscarAmonestados() {
