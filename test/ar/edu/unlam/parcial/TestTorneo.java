@@ -97,7 +97,8 @@ public class TestTorneo {
 
 		assertEquals(riquelme, goleador);
 	}
-
+	
+	@Test
 	public void queNoSePuedaAgrega2EquiposConMismoNombreAUnTorneo() {
 
 		Equipo equipo1 = new Equipo("boca", "Apodo1", "Direccion1");
@@ -127,6 +128,7 @@ public class TestTorneo {
 		assertNotEquals(10, torneo.getEquipos().size());
 	}
 	
+	@Test
 	public void ObtenerJugadoresMasAmonestados() {
 
 		Jugador jugador1 = new Jugador("Juan", "Perez", 10, 123456789, 25, "12345678");
@@ -151,8 +153,7 @@ public class TestTorneo {
 		List<Equipo> equipos = Arrays.asList(equipo1, equipo2, equipo3, equipo4, equipo5, equipo6, equipo7, equipo8,
 				equipo9, equipo10);
 		Torneo torneo = new Torneo(equipos);
-		torneo.agregarEquipo(equipo1);
-		torneo.agregarEquipo(equipo2);
+	
 
 		torneo.generarTorneo();
 
@@ -170,6 +171,43 @@ public class TestTorneo {
 		// Verificar que el jugador más amonestado sea el correcto
 		assertEquals(1, jugadoresMasAmonestados.size());
 		assertEquals(jugador1, jugadoresMasAmonestados.get(0));
+	}
+	
+	@Test
+	public void queSePuedaGenerarUnRankingDeEquiposDependiendoVictoriasYEmpates() {
+
+		Jugador jugador1 = new Jugador("Juan", "Perez", 10, 123456789, 25, "12345678");
+		Jugador jugador2 = new Jugador("Pedro", "Gomez", 5, 987654321, 28, "87654321");
+		Jugador jugador3 = new Jugador("Luis", "Lopez", 7, 555555555, 30, "76543210");
+
+		Equipo equipo1 = new Equipo("boca", "Apodo1", "Direccion1");
+		Equipo equipo2 = new Equipo("boca", "Apodo2", "Direccion2");
+		Equipo equipo3 = new Equipo("Equipo3", "Apodo3", "Direccion3");
+		Equipo equipo4 = new Equipo("Equipo4", "Apodo4", "Direccion4");
+		Equipo equipo5 = new Equipo("Equipo5", "Apodo5", "Direccion5");
+		Equipo equipo6 = new Equipo("Equipo6", "Apodo6", "Direccion6");
+		Equipo equipo7 = new Equipo("Equipo7", "Apodo7", "Direccion7");
+		Equipo equipo8 = new Equipo("Equipo8", "Apodo8", "Direccion8");
+		Equipo equipo9 = new Equipo("Equipo9", "Apodo9", "Direccion9");
+		Equipo equipo10 = new Equipo("Equipo10", "Apodo10", "Direccion10");
+
+		equipo1.agregarJugador(jugador1);
+		equipo1.agregarJugador(jugador2);
+		equipo2.agregarJugador(jugador3);
+
+		List<Equipo> equipos = Arrays.asList(equipo1, equipo2, equipo3, equipo4, equipo5, equipo6, equipo7, equipo8,
+				equipo9, equipo10);
+		Torneo torneo = new Torneo(equipos);
+
+		equipo1.setPartidosGanados(3);
+		equipo1.setPartidosEmpatados(25);
+		equipo2.setPartidosGanados(2);
+		equipo4.setPartidosGanados(5);
+		List<Equipo> ranking = torneo.generarRanking();
+
+		assertEquals(equipo4, ranking.get(1));
+		assertEquals(equipo1, ranking.get(0));
+		assertEquals(equipo2, ranking.get(2));
 	}
 
 }

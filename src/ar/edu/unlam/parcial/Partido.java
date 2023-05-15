@@ -1,10 +1,7 @@
 package ar.edu.unlam.parcial;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 
 public class Partido {
 
@@ -12,12 +9,12 @@ public class Partido {
 	private Equipo equipoVisitante;
 	private Integer numeroDePartdo;
 	private ArrayList<Evento> eventos;
-	private ArrayList<Gol> goleador;
+	
 
 	public Partido(Integer numeroDePartido, Equipo equipoLocal, Equipo equipoVisitante) {
 		this.equipoLocal = equipoLocal;
 		this.equipoVisitante = equipoVisitante;
-		this.numeroDePartdo = numeroDePartido;
+		this.setNumeroDePartdo(numeroDePartido);
 		eventos = new ArrayList<Evento>();
 	}
 
@@ -46,6 +43,13 @@ public class Partido {
 		}
 		return false;
 	}
+	
+	public Equipo actualizarPartido() {
+	    Equipo equipoGanador = obtenerEquipoGanador();
+	    listarEventos();
+	    return equipoGanador;
+	}
+
 
 	public void anotarUnGol(Equipo equipo, Jugador jugador, Integer minuto) {
 		Evento gol = new Gol(minuto, equipo.buscarJugadorPorNumero(jugador.getNumeroDorsal()), equipo.getNombre());
@@ -91,14 +95,22 @@ public class Partido {
 			}
 		}
 
-		if (golesEquipoLocal > golesEquipoVisitante) {
-			return equipoLocal;
-		} else if (golesEquipoLocal < golesEquipoVisitante) {
-			return equipoVisitante;
-		} else {
-			return null;
-		}
+	    if (golesEquipoLocal > golesEquipoVisitante) {
+	        equipoLocal.sumarVictoria();
+	        equipoVisitante.sumarDerrota();
+	        return equipoLocal;
+	    } else if (golesEquipoLocal < golesEquipoVisitante) {
+	        equipoVisitante.sumarVictoria();
+	        equipoLocal.sumarDerrota();
+	        return equipoVisitante;
+	    } else {
+	        equipoLocal.sumarEmpate();
+	        equipoVisitante.sumarEmpate();
+	        return null;
+	    }
 	}
+	
+	
 
 	public void listarEventos() {
 		System.out.println("Lista de eventos del partido:");
@@ -127,6 +139,14 @@ public class Partido {
 
 	public void setEventos(ArrayList<Evento> eventos) {
 		this.eventos = eventos;
+	}
+
+	public Integer getNumeroDePartdo() {
+		return numeroDePartdo;
+	}
+
+	public void setNumeroDePartdo(Integer numeroDePartdo) {
+		this.numeroDePartdo = numeroDePartdo;
 	}
 
 }

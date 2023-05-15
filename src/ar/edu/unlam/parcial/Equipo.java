@@ -8,6 +8,34 @@ public class Equipo {
 	private String direccion;
 	private HashSet<Jugador> jugadores;
 	private HashSet<CuerpoTecnico> cuerpoTecnico;
+	private Integer partidosPerdidos;
+	public Integer getPartidosPerdidos() {
+		return partidosPerdidos;
+	}
+
+	public void setPartidosPerdidos(Integer partidosPerdidos) {
+		this.partidosPerdidos = partidosPerdidos;
+	}
+
+	public Integer getPartidosGanados() {
+		return partidosGanados;
+	}
+
+	public void setPartidosGanados(Integer partidosGanados) {
+		this.partidosGanados = partidosGanados;
+	}
+
+	public Integer getPartidosEmpatados() {
+		return partidosEmpatados;
+	}
+
+	public void setPartidosEmpatados(Integer partidosEmpatados) {
+		this.partidosEmpatados = partidosEmpatados;
+	}
+
+	private Integer partidosGanados;
+	private Integer partidosEmpatados;
+
 
 	public Equipo(String nombre, String apodo, String direccion) {
 		this.nombre = nombre;
@@ -15,6 +43,9 @@ public class Equipo {
 		this.direccion = direccion;
 		this.jugadores = new HashSet<>();
 		this.cuerpoTecnico = new HashSet<>();
+		this.partidosPerdidos = 0;
+		this.partidosGanados = 0;
+		this.partidosEmpatados = 0;
 	}
 
 	public Equipo() {
@@ -93,6 +124,18 @@ public class Equipo {
 
 	public Integer getCantidadDeCuerpoTecnico() {
 		return this.cuerpoTecnico.size();
+	}
+	
+	public void sumarVictoria() {
+		this.partidosGanados++;
+	}
+	
+	public void sumarDerrota() {
+		this.partidosPerdidos++;
+	}
+	
+	public void sumarEmpate() {
+		this.partidosEmpatados++;
 	}
 
 	public Double calcularEdadPromedio() {

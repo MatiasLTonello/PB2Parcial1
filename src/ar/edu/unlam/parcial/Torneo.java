@@ -2,6 +2,7 @@ package ar.edu.unlam.parcial;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -87,13 +88,6 @@ public class Torneo {
 		return false;
 	}
 
-	private List<Equipo> seleccionarEquiposAleatorios() {
-
-		List<Equipo> equiposAleatorios = new ArrayList<Equipo>(equiposFinal);
-
-		Collections.shuffle(equiposAleatorios);
-		return equiposAleatorios.subList(0, Math.min(2, equiposAleatorios.size()));
-	}
 
 	public List<Equipo> getEquipos() {
 		return equipos;
@@ -124,6 +118,36 @@ public class Torneo {
 
 		return goleador;
 	}
+	
+	public List<Equipo> generarRanking() {
+	    List<Equipo> ranking = new ArrayList<>(equipos);
+
+	    Collections.sort(ranking, new Comparator<Equipo>() {
+	        @Override
+	        public int compare(Equipo equipo1, Equipo equipo2) {
+	            int puntosEquipo1 = calcularPuntos(equipo1);
+	            int puntosEquipo2 = calcularPuntos(equipo2);
+
+	            if (puntosEquipo1 > puntosEquipo2) {
+	                return -1;
+	            } else if (puntosEquipo1 < puntosEquipo2) {
+	                return 1;
+	            } else {
+	                return 0;
+	            }
+	        }
+	    });
+
+	    return ranking;
+	}
+
+	private int calcularPuntos(Equipo equipo) {
+	    int puntos = 0;
+	    puntos += equipo.getPartidosGanados() * 3;
+	    puntos += equipo.getPartidosEmpatados();
+
+	    return puntos;
+	}
 
 	public void setEquipos(List<Equipo> equipos) {
 		this.equipos = equipos;
@@ -132,10 +156,6 @@ public class Torneo {
 	private Partido crearPartido(Equipo equipo1, Equipo equipo2) {
 		Partido partido = new Partido(partidos.size() + 1, equipo1, equipo2);
 		return partido;
-	}
-
-	private void moverEquipos(List<Equipo> equipos) {
-		equiposFinal.removeAll(equipos);
 	}
 
 	public List<Partido> getPartidos() {
